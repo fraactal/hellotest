@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UFT-8">
+        <title>Hello        </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}"
+    </head>
+
+    <body> 
+        <img src="https://crowdsurfwork.com/wp-content/uploads/2015/05/say-hello.png"> 
+        <br>
+
+        <form action="greet" method="post">
+            {% for message in get_flashed_messages() %}
+            <p>{{message}}</p>
+            {% endfor %}
+            <!-- <p>Waths your name?</p> -->
+            
+            <br>
+            <input type="text" name="name_input">
+            <br>
+            <input type="submit" value="GREET" id="greet"> 
+        </form>
+    </body>
+</html>
